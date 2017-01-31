@@ -30,7 +30,6 @@ KIBANA_INDEX=${KIBANA_INDEX:-.kibana}
 sed -i -e "s;^  hosts: \[ '127\.0\.0\.1' \];  hosts: [ '${ES_HOST}' ];" \
        -e "s;^  port: 9200;  port: ${ES_PORT};" \
        -e "s;^  http_auth:;  http_auth: '${ES_USER}:${ES_PASS}';" \
-       -e "s;^  use_ssl: False;  use_ssl: True;" \
        /opt/curator/config/curator.yml
 
 sed -i -e "s;^      unit: days;      unit: ${DELETE_UNIT};" \
